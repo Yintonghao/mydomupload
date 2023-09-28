@@ -1,0 +1,19 @@
+{
+    "name": "mydom/uploads",
+    "description": "文件上传",
+    "type": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "license": "1",
+    "autoload": {
+        "psr-4": {
+            "Mydom\\Uploads\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "大菠萝"
+        }
+    ]
+}
