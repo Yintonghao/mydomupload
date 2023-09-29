@@ -12,7 +12,15 @@ class Signature extends IsDir
     private $key = '9a018cfc8e4b9de4a5f6f8dd89d5fb66';
     private $iv = 'EE67C9C956215241';
     public $default_img = '';
-    public function __construct($childPath = 'uploads',$formats = 'images',$assignext = [],$file_ext = null,$settingImg = null)
+
+    /**
+     * @param string $childPath
+     * @param string $formats 上传类型 图片=imgage,视频=video
+     * @param array $assignext 允许上传的文件后缀
+     * @param string $file_ext 指定上传文件后缀
+     * @param string $settingImg 404图片
+     */
+    public function __construct(string $childPath = 'uploads',string $formats = 'images',array $assignext = [],string $file_ext = null,string $settingImg = null)
     {
         if($settingImg){
             $this->default_img = $settingImg;
@@ -37,6 +45,9 @@ class Signature extends IsDir
      */
     public function encryptUpload($files,$is_jm = false)
     {
+        if(empty($files)){
+            throw new \Exception('请上传文件',0);
+        }
         $savename = [];
         foreach ($files as $file) {
             $ext = $this->getExt($file['name']);
