@@ -14,7 +14,7 @@ class Signature extends IsDir
     public $default_img = '';
 
     /**
-     * @param string $childPath
+     * @param string $childPath 指定上传目录
      * @param string $formats 上传类型 图片=imgage,视频=video
      * @param array $assignext 允许上传的文件后缀
      * @param string $file_ext 指定上传文件后缀
