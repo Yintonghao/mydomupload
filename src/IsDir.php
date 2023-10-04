@@ -10,7 +10,9 @@ class IsDir
     public function __construct($childPath)
     {
         $this->path = getcwd() . '\\';
-        $this->childPath = 'public/'.$childPath;
+        if(strstr($this->path,'public') === false){
+            $this->childPath = 'public/'.$childPath;
+        }
         $this->isdir($childPath);
     }
 

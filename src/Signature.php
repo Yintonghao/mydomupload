@@ -5,6 +5,10 @@ namespace Mydom\Uploads;
 
 class Signature extends IsDir
 {
+    /**
+     * git tag -a v1.0.2 -m "第二个版本"
+     * git push origin v1.0.2
+     */
     private $hard_ext = 'webp';
     private $imageExt = ['jpg', 'png', 'jpeg', 'PNG', 'JPG', 'JPEG','webp'];
     private $videoExt = ['MP4', 'mp4', 'ogg', 'avi', 'wmv', 'mov'];
