@@ -17,7 +17,7 @@ class IsDir
         if (strstr($this->path, 'public') === false) {
             $this->childPath = 'public/' . $childPath;
         } else {
-            $this->childPath = '\\' . $childPath;
+            $this->childPath = '/' . $childPath;
         }
         $this->isdir();
     }
